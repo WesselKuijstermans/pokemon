@@ -12,7 +12,7 @@ export class TypesService {
   }
 
   async findOne(param: string): Promise<Type> {
-    return this.typeModel.findOne({ name: param}).exec();
+    return this.typeModel.findOne({ name: {$regex: param, $options : 'i'}}).exec();
   }
 
   async delete(param : string) {
