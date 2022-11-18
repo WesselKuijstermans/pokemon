@@ -10,6 +10,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { MovesComponent } from './moves/moves.component';
 import { TypesComponent } from './types/types.component';
 import { CasusComponent } from './casus/casus.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CasusComponent } from './casus/casus.component';
   imports: [
     BrowserModule,
     NgbModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
