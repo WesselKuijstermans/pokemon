@@ -10,6 +10,7 @@ export class AuthController {
 
     @Post('register')
     async register(@Body() credentials: UserRegistration): Promise<TrainerId> {
+        console.log("called!")
         try {
             await this.authService.registerUser(credentials.username, credentials.password, credentials.emailAddress);
     
