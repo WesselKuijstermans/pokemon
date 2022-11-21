@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { UserRegistration } from '@pokemon/api-interfaces';
 
 @Component({
   selector: 'pokemon-register',
@@ -27,6 +26,6 @@ export class RegisterComponent {
 
   register(): void {
     console.log("Called!")
-    this.http.post<UserRegistration>('http://localhost:3000/register', this.registerForm.value);
+    this.http.post('http://localhost:3000/register', this.registerForm.value);
   }
 }
