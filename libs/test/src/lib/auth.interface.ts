@@ -4,7 +4,7 @@ export interface UserCredentials {
 }
 
 export interface UserRegistration extends UserCredentials {
-    emailAddress: string
+    emailAddress: string;
 }
 
 export interface Token {

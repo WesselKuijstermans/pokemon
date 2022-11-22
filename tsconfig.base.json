@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@pokemon/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@pokemon/test": ["libs/test/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]
 }
+

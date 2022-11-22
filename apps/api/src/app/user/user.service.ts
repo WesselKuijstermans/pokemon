@@ -5,18 +5,20 @@ import { InjectModel } from '@nestjs/mongoose';
 
 import { User as UserModel, UserDocument } from './user.schema';
 
-import { User, UserInfo } from '@pokemon/api-interfaces';
+import { User, UserInfo } from '@pokemon/test';
 
 @Injectable()
 export class UserService {
-  constructor(@InjectModel(UserModel.name) private userModel: Model<UserDocument>) {}
+  constructor(
+    @InjectModel(UserModel.name) private userModel: Model<UserDocument>
+  ) {}
 
   async getAll(): Promise<UserInfo[]> {
     return this.userModel.find();
   }
 
   async getOne(inputId: string): Promise<User | null> {
-    const users = this.userModel.find({trainerId : inputId})
+    const users = this.userModel.find({ trainerId: inputId });
     return users[0];
   }
 }

@@ -2,7 +2,7 @@ import { Controller, Get, Param } from '@nestjs/common';
 
 import { UserService } from './user.service';
 
-import { UserInfo, User } from '@pokemon/api-interfaces';
+import { UserInfo, User } from '@pokemon/test';
 import { InjectToken, Token } from '../auth/token.decorator';
 
 @Controller('user')

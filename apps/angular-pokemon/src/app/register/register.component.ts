@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { UserRegistration } from '../../../../../libs/test/src/index';
 
 @Component({
   selector: 'pokemon-register',
@@ -8,14 +9,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  constructor(private http: HttpClient) {}
+  user!: UserRegistration;
+  constructor(private http: HttpClient) {
+  }
 
   registerForm = new FormGroup({
     username: new FormControl('', [
       Validators.required,
       Validators.minLength(4),
     ]),
-    email: new FormControl('', [
+    emailAddress: new FormControl('', [
       Validators.required, 
       Validators.email
     ]),
@@ -25,7 +28,11 @@ export class RegisterComponent {
   });
 
   register(): void {
-    console.log("Called!")
-    this.http.post('http://localhost:3000/register', this.registerForm.value);
+    this.user.emailAddress = this.registerForm.value.emailAddress!;
+    this.user.password = this.registerForm.value.password!;
+    this.user.username = this.registerForm.value.username!;
+    const req = this.http.post('http://localhost:3000/register', this.user);
+     req.subscribe();
   }
+
 }

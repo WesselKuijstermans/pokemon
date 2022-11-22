@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "./apps/angular-pokemon" },
+    { "path": "./apps/api" },
+    { "path": "./libs/test" }
+  ]
+}
